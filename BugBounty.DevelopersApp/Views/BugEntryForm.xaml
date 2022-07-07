@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="BugBounty.DevelopersApp.Views.BugEntryForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BugBounty.DevelopersApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisCon"/>
+    </UserControl.Resources>
+
+    <Grid Background="AliceBlue">
+        <StackPanel>
+            <Label>Short Description</Label>
+            <TextBox Height="150" Margin="3" x:Name="ShortDesc"/>
+            <Label>Location</Label>
+            <TextBox Margin="3" x:Name="Loc"/>
+            <Label>Assignee</Label>
+            <TextBox  Width="150" HorizontalAlignment="Left" Margin="3" x:Name="Assignee"/>
+            <!--Save Buttons-->
+            <StackPanel Orientation="Horizontal" Margin="3,5,3,3"
+                    Visibility="{Binding IsDataEntered, Converter={StaticResource BoolToVisCon}}"
+                    >
+                <Button Content="Save" Margin="0 0 5 0" Width="50">
+                    
+                </Button>
+
+                <Button Content="Cancel" Margin="5 0 5 0" Width="50"/>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>
